@@ -1,0 +1,4 @@
+from gradient_free_minimize import doParticleSwarm
+from in_house_minimize import  doGradientDescent
+from scipy_minimize import doScipyOptimize
+
