@@ -9,15 +9,6 @@ def objectiveFunction( x ):
 def objectiveFunctionDerivative( x ):
     return 2 * x - 6
 
-
-def plot(x, y):
-    plt.plot(x, y, "-o")
-    plt.xlabel('Iteration')
-    plt.ylabel('Obejective Function Value')
-    plt.title('Gradient Descent')
-    plt.show()
-
-
 def numericTangent( function, x, eps=1e-6 ):
     f = function(x)
     n = x.shape[0]
@@ -57,9 +48,8 @@ def gradientDescent( function, initial ):
 def doGradientDescent():
     initial = np.array([50.0])
     iAll, fAll = gradientDescent( objectiveFunction, initial )
-    plot(iAll, fAll)
+    return iAll, fAll
 
-doGradientDescent()
 
 
 

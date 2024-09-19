@@ -6,13 +6,13 @@ from gradient_free_optimizers import ParticleSwarmOptimizer
 def objectiveFunction( x ):
     return ( x - 3 )**2 + 1
 
-objective_value = []
+objective_valueP = []
 
 
 def objective_function_gfo(para):
     u = para["u"]
     value = objectiveFunction(u)
-    objective_value.append(value)
+    objective_valueP.append(value)
     return -value
 
 
@@ -23,16 +23,4 @@ def doParticleSwarm():
                     }
     opt = ParticleSwarmOptimizer(search_space, population=5)
     opt.search(objective_function_gfo, n_iter=500)
-
-doParticleSwarm()
-iter = []
-new_range = len(objective_value)
-for i in range(new_range):
-    iter.append(i)
-
-plt.plot(iter,objective_value)
-plt.xlabel('Iteration')
-plt.ylabel('Objective Function Value')
-plt.show()
-
 
