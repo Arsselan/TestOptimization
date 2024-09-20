@@ -4,7 +4,10 @@ from gradient_free_optimizers import ParticleSwarmOptimizer
 
 
 def objectiveFunction( x , y):
-    return ( x - 3 )**2 + 1 + np.sin(y) +x*y
+    return (x-2)**2 +(y+3)**2 +np.sin(x**2 +y**2)
+    #Globales Minimum bei f(x,y) = (2,-3)
+    #return np.sin(x**2+y**2)+0.5*(x**2+y**2)-0.5
+    # Globales Minimum bei f(x,y) = (0,0)
 
 objective_value = []
 

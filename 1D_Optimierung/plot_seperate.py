@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+
 from scipy_minimize import doScipyOptimize, objective_value, result
 
 print(f"Optimal solution: {result.x}")
@@ -10,6 +11,7 @@ plt.plot(objective_value, marker = 'o')
 plt.xlabel('Iteration')
 plt.ylabel('Objective Function Value')
 plt.show()
+
 
 from gradient_free_minimize import doParticleSwarm, objective_valueP
 
@@ -23,6 +25,7 @@ plt.plot(iter,objective_valueP)
 plt.xlabel('Iteration')
 plt.ylabel('Objective Function Value')
 plt.show()
+
 
 from in_house_minimize import  doGradientDescent
 iAll,fAll = doGradientDescent()
