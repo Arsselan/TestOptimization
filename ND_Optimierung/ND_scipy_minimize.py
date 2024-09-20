@@ -26,8 +26,8 @@ def doScipyOptimize():
     #https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html
     return scipy.optimize.minimize(objective_function_scipy, np.array([0,0]), method='L-BFGS-B')
 #es jabb ab der Methode liegen, dass er Kantig aussieht, man kann andere Methoden verwendet L-BFGS-B oder Powell
-
 result = doScipyOptimize()
+'''
 iter = []
 new_range = len(objective_value)
 for i in range(new_range):
@@ -42,3 +42,4 @@ plt.plot(iter,objective_value)
 plt.xlabel('Iteration')
 plt.ylabel('Objective Function Value')
 plt.show()
+'''

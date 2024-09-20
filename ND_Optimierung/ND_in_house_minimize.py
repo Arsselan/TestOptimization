@@ -38,7 +38,7 @@ def doGradientDescent():
     initial = np.array([50.0, 50.0])
     iAll, fAll = gradientDescent(objectiveFunction, initial)
     return iAll, fAll
-
+'''
 iAll, fAll = doGradientDescent()
 
 # Plotting the results
@@ -48,3 +48,4 @@ plt.ylabel('Objective Function Value')
 plt.title('Gradient Descent Optimization')
 plt.grid(True)
 plt.show()
+'''

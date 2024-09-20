@@ -10,6 +10,7 @@ print(f"Message: {result.message}")
 plt.plot(objective_value, marker = 'o')
 plt.xlabel('Iteration')
 plt.ylabel('Objective Function Value')
+plt.title('Scipy Optimization')
 plt.show()
 
 
@@ -24,6 +25,7 @@ for i in range(new_range):
 plt.plot(iter,objective_valueP)
 plt.xlabel('Iteration')
 plt.ylabel('Objective Function Value')
+plt.title('Particle Swarm Optimization')
 plt.show()
 
 
@@ -33,4 +35,5 @@ iAll,fAll = doGradientDescent()
 plt.plot(iAll,fAll)
 plt.xlabel('Iteration')
 plt.ylabel('Objective Function Value')
+plt.title('Gradient Descent Optimization')
 plt.show()

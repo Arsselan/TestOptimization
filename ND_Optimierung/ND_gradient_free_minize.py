@@ -9,14 +9,14 @@ def objectiveFunction( x , y):
     #return np.sin(x**2+y**2)+0.5*(x**2+y**2)-0.5
     # Globales Minimum bei f(x,y) = (0,0)
 
-objective_value = []
+objective_valueP = []
 
 
 def objective_function_gfo(para):
     u = para["u"]
     u2 = para["u2"]
     value = objectiveFunction(u,u2)
-    objective_value.append(value)
+    objective_valueP.append(value)
     return -value
 
 
@@ -29,15 +29,15 @@ def doParticleSwarm():
     opt = ParticleSwarmOptimizer(search_space, population=5)
     opt.search(objective_function_gfo, n_iter=500)
 
+'''
 doParticleSwarm()
 iter = []
-new_range = len(objective_value)
+new_range = len(objective_valueP)
 for i in range(new_range):
     iter.append(i)
 
-plt.plot(iter,objective_value)
+plt.plot(iter,objective_valueP)
 plt.xlabel('Iteration')
 plt.ylabel('Objective Function Value')
 plt.show()
-
-
+'''
