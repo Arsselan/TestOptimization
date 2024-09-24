@@ -8,14 +8,14 @@ def objectiveFunction( x , y):
     #return np.sin(x**2+y**2)+0.5*(x**2+y**2)-0.5
     # Globales Minimum bei f(x,y) = (0,0)
 
-objective_valueP = []
+objective_valueParticle = []
 
 
 def objective_function_gfo(para):
     u = para["u"]
     u2 = para["u2"]
     value = objectiveFunction(u,u2)
-    objective_valueP.append(value)
+    objective_valueParticle.append(value)
     return -value
 
 
@@ -31,7 +31,7 @@ def doParticleSwarm():
 
 doParticleSwarm()
 iterParticle = []
-new_range = len(objective_valueP)
+new_range = len(objective_valueParticle)
 for i in range(new_range):
     iterParticle.append(i)
 
@@ -41,6 +41,6 @@ if __name__ == "__main__":
     with open(filename, 'w') as file:
         file.write("Iteration\tObjective Value (J)\n")  # Kopfzeile
         for i in range(len(iterParticle)):
-            file.write(f"{iterParticle[i]}\t{objective_valueP[i]:.6f}\n")  # Iteration und Objective Value
+            file.write(f"{iterParticle[i]}\t{objective_valueParticle[i]:.6f}\n")  # Iteration und Objective Value
 
     print(f"Ergebnisse wurden automatisch in {filename} gespeichert.")

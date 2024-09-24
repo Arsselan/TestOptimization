@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 def objectiveFunction(x):
     u, v = x
@@ -51,14 +50,3 @@ if __name__ == "__main__":
 
     print(f"Ergebnisse wurden automatisch in {filename} gespeichert.")
 
-'''
-iAll, fAll = doGradientDescent()
-
-# Plotting the results
-plt.plot(iAll, fAll, marker='o')
-plt.xlabel('Iteration')
-plt.ylabel('Objective Function Value')
-plt.title('Gradient Descent Optimization')
-plt.grid(True)
-plt.show()
-'''

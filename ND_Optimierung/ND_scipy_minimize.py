@@ -1,9 +1,5 @@
 import numpy as np
 import scipy
-from scipy import optimize
-import matplotlib.pyplot as plt
-
-
 
 def objectiveFunction( x , y):
     return (x-2)**2 +(y+3)**2 +np.sin(x**2 +y**2)
@@ -12,16 +8,16 @@ def objectiveFunction( x , y):
  #   return 2 * x - 6d
 
 
-objective_value = []
+objective_valueScipy = []
 def objective_function_scipy(param):
     u,y = param
-    objective_value.append(objectiveFunction(u,y))
+    objective_valueScipy.append(objectiveFunction(u,y))
     return objectiveFunction(u,y)
 
 
 def doScipyOptimize():
-    global objective_value
-    objective_value = []
+    global objective_valueScipy
+    objective_valueScipy = []
 
     #https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html
     return scipy.optimize.minimize(objective_function_scipy, np.array([0,0]), method='L-BFGS-B')
@@ -29,7 +25,7 @@ def doScipyOptimize():
 result = doScipyOptimize()
 
 iterScipy = []
-new_range = len(objective_value)
+new_range = len(objective_valueScipy)
 for i in range(new_range):
     iterScipy.append(i)
 
@@ -40,7 +36,7 @@ if __name__ == "__main__":
     with open(filename, 'w') as file:
         file.write("Iteration\tObjective Value (J)\n")  # Kopfzeile
         for i in range(len(iterScipy)):
-            file.write(f"{iterScipy[i]}\t{objective_value[i]:.6f}\n")  # Iteration und Objective Value
+            file.write(f"{iterScipy[i]}\t{objective_valueScipy[i]:.6f}\n")  # Iteration und Objective Value
 
     print(f"Ergebnisse wurden automatisch in {filename} gespeichert.")
 '''
