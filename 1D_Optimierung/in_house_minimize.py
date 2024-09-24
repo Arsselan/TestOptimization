@@ -1,6 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
-
 
 def objectiveFunction( x ):
     return ( x - 3 )**2 + 1

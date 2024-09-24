@@ -1,20 +1,16 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from gradient_free_optimizers import ParticleSwarmOptimizer
-
 
 def objectiveFunction( x ):
     return ( x - 3 )**2 + 1
 
-objective_valueP = []
-
+objective_valueParticle = []
 
 def objective_function_gfo(para):
     u = para["u"]
     value = objectiveFunction(u)
-    objective_valueP.append(value)
+    objective_valueParticle.append(value)
     return -value
-
 
 def doParticleSwarm():
     
@@ -25,17 +21,17 @@ def doParticleSwarm():
     opt.search(objective_function_gfo, n_iter=500)
 
 doParticleSwarm()
-iter = []
-new_range = len(objective_valueP)
+iterParticle = []
+new_range = len(objective_valueParticle)
 for i in range(new_range):
-    iter.append(i)
+    iterParticle.append(i)
 
 #erstellen einer Textdatei mit den Ergebnissen
 if __name__ == "__main__":
     filename = "ParticleSwarm_results.txt"
     with open(filename, 'w') as file:
         file.write("Iteration\tObjective Value (J)\n")  # Kopfzeile
-        for i in range(len(iter)):
-            file.write(f"{iter[i]}\t{objective_valueP[i]:.6f}\n")  # Iteration und Objective Value
+        for i in range(len(iterParticle)):
+            file.write(f"{iterParticle[i]}\t{objective_valueParticle[i]:.6f}\n")  # Iteration und Objective Value
 
     print(f"Ergebnisse wurden automatisch in {filename} gespeichert.")
