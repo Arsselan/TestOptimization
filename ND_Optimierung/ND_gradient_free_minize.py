@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from gradient_free_optimizers import ParticleSwarmOptimizer
 
 
@@ -29,15 +28,19 @@ def doParticleSwarm():
     opt = ParticleSwarmOptimizer(search_space, population=5)
     opt.search(objective_function_gfo, n_iter=500)
 
-'''
+
 doParticleSwarm()
-iter = []
+iterParticle = []
 new_range = len(objective_valueP)
 for i in range(new_range):
-    iter.append(i)
+    iterParticle.append(i)
 
-plt.plot(iter,objective_valueP)
-plt.xlabel('Iteration')
-plt.ylabel('Objective Function Value')
-plt.show()
-'''
+#erstellen einer Textdatei mit den Ergebnissen
+if __name__ == "__main__":
+    filename = "ND_ParticleSwarm_results.txt"
+    with open(filename, 'w') as file:
+        file.write("Iteration\tObjective Value (J)\n")  # Kopfzeile
+        for i in range(len(iterParticle)):
+            file.write(f"{iterParticle[i]}\t{objective_valueP[i]:.6f}\n")  # Iteration und Objective Value
+
+    print(f"Ergebnisse wurden automatisch in {filename} gespeichert.")

@@ -27,12 +27,23 @@ def doScipyOptimize():
     return scipy.optimize.minimize(objective_function_scipy, np.array([0,0]), method='L-BFGS-B')
 #es jabb ab der Methode liegen, dass er Kantig aussieht, man kann andere Methoden verwendet L-BFGS-B oder Powell
 result = doScipyOptimize()
-'''
-iter = []
+
+iterScipy = []
 new_range = len(objective_value)
 for i in range(new_range):
-    iter.append(i)
+    iterScipy.append(i)
 
+
+#erstellen einer Textdatei mit den Ergebnissen
+if __name__ == "__main__":
+    filename = "ND_Scipy_results_start0.txt"
+    with open(filename, 'w') as file:
+        file.write("Iteration\tObjective Value (J)\n")  # Kopfzeile
+        for i in range(len(iterScipy)):
+            file.write(f"{iterScipy[i]}\t{objective_value[i]:.6f}\n")  # Iteration und Objective Value
+
+    print(f"Ergebnisse wurden automatisch in {filename} gespeichert.")
+'''
 print(f"Optimal solution: {result.x}")
 print(f"Objective function value at optimal solution: {result.fun}")
 print(f"Optimization success: {result.success}")

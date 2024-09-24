@@ -1,12 +1,12 @@
 import matplotlib.pyplot as plt
 from ND_gradient_free_minize import doParticleSwarm, objective_valueP
-
+'''
 doParticleSwarm()
 iter = []
 new_range = len(objective_valueP)
 for i in range(new_range):
     iter.append(i)
-
+'''
 plt.plot(iter,objective_valueP)
 plt.xlabel('Iteration')
 plt.ylabel('Objective Function Value')
@@ -31,8 +31,7 @@ plt.ylabel('Objective Function Value')
 plt.title('Scipy Optimization')
 plt.show()
 
-from ND_in_house_minimize import doGradientDescent
-iAll, fAll = doGradientDescent()
+from ND_in_house_minimize import iAll, fAll
 
 plt.plot(iAll, fAll, marker='o')
 plt.xlabel('Iteration')
