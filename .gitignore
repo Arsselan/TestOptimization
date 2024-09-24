@@ -1,2 +1,4 @@
 ﻿1D_Optimierung/__pycache__
 ND_Optimierung/__pycache__
+*.txt
+.DS_Store

@@ -50,8 +50,14 @@ def doGradientDescent():
     iAll, fAll = gradientDescent( objectiveFunction, initial )
     return iAll, fAll
 
+iAll, fAll = doGradientDescent()
 
+#erstellen einer Textdatei mit den Ergebnissen
+if __name__ == "__main__":
+    filename ="1D_Gradient_results_start0.txt"
+    with open(filename,'w') as file:
+        file.write("Iteration\tObjective Value (J)\n")
+        for i in range(len(iAll)):
+            file.write(f"{iAll[i]}\t{fAll[i]:.6f}\n")
 
-
-
-
+    print(f"Ergebnisse wurden automatisch in {filename} gespeichert.")

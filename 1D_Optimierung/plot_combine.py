@@ -1,14 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy_minimize import doScipyOptimize, objective_value, result
-from gradient_free_minimize import doParticleSwarm, objective_valueP
-from in_house_minimize import doGradientDescent
+from scipy_minimize import  objective_value
+from gradient_free_minimize import  objective_valueP
+from in_house_minimize import iAll,fAll
 
 def plot_optimization_results():
-   
-    result = doScipyOptimize()
-    doParticleSwarm()
-    iAll_gd, fAll_gd = doGradientDescent()
 
     plt.figure(figsize=(12, 8))
 
@@ -20,7 +16,7 @@ def plot_optimization_results():
     plt.plot(pso_iter, objective_valueP, marker='x', label='Particle Swarm Optimization', linestyle='--', color='r')
 
     # Plot für GradientDescent 
-    plt.plot(iAll_gd, fAll_gd, marker='s', label='Gradient Descent Optimization', linestyle=':', color='g')
+    plt.plot(iAll, fAll, marker='s', label='Gradient Descent Optimization', linestyle=':', color='g')
 
     plt.xlabel('Iteration')
     plt.ylabel('Objective Function Value')
