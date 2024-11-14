@@ -20,7 +20,7 @@ def doScipyOptimize():
     objective_valueScipy = []
 
     #https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html
-    return scipy.optimize.minimize(objective_function_scipy, np.array([0,0]), method='L-BFGS-B')
+    return scipy.optimize.minimize(objective_function_scipy, np.array([50,50]), method='L-BFGS-B')
 #es jabb ab der Methode liegen, dass er Kantig aussieht, man kann andere Methoden verwendet L-BFGS-B oder Powell
 result = doScipyOptimize()
 

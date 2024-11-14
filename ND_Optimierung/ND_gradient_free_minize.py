@@ -22,8 +22,8 @@ def objective_function_gfo(para):
 def doParticleSwarm():
     
     search_space = {
-                    "u": np.arange(-20, 20, 0.1),
-                    "u2": np.arange(-20, 20, 0.1)
+                    "u": np.arange(-50, 50, 0.1),
+                    "u2": np.arange(-50, 50, 0.1)
                     }
     opt = ParticleSwarmOptimizer(search_space, population=5)
     opt.search(objective_function_gfo, n_iter=500)
