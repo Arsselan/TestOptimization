@@ -36,7 +36,7 @@ def gradientDescent(function, initial):
     return iAll, fAll
 
 def doGradientDescent():
-    initial = np.array([50.0])
+    initial = np.array([1000.0])
     iAll, fAll = gradientDescent(objectiveFunction, initial)
     return iAll, fAll
 
@@ -44,7 +44,7 @@ iAll, fAll = doGradientDescent()
 
 # Erstellen einer Textdatei mit den Ergebnissen
 if __name__ == "__main__":
-    filename = "1D_Gradient_results_start0.txt"
+    filename = "1D_Gradient_start10_fixed_alpha.txt"
     with open(filename, 'w') as file:
         file.write("Iteration\tObjective Value (J)\n")
         for i in range(len(iAll)):
